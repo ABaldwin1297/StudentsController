@@ -14,8 +14,11 @@ namespace StudentsController {
         public int? SAT { get; set; }
         public decimal GPA { get; set; }
         public int? MajorId { get; set; }
+        public Major? Major { get; set; }
         public override string ToString() {
-            return $"Id[{Id}], Firstname[{Firstname}], Lastname[{Lastname}, MajorId{MajorId}]";
+            return $"Id[{Id}], Firstname[{Firstname}], Lastname[{Lastname}], "
+                  + $"State = {StateCode}, GPA = {GPA},   SAT =  {SAT}   "
+                  + $"Major[{(Major is null ? "Undeclared" : Major.Description)}]";
         }
     }
 }
